@@ -33,6 +33,10 @@ namespace OnlineBookstore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Classification")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

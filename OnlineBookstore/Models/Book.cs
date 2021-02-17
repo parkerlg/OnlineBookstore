@@ -15,7 +15,10 @@ namespace OnlineBookstore.Models
         [Required]
         public string Publisher { get; set; }
         [Required]
+        [RegularExpression(@"^\d{3}-\d{10}$", ErrorMessage = "Enter a Valid ISBN"]
         public string ISBN { get; set; }
+        [Required]
+        public string Classification { get; set; }
         [Required]
         public string Category { get; set; }
         [Required]

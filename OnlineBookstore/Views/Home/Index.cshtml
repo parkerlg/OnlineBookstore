@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "The Bookstore";
+    ViewData["Title"] = "The Online Bookstore";
 }
 
 @model IQueryable<Book>
@@ -9,12 +9,25 @@
 </div>
 
 <div>
-    @foreach (var x in Model)
-    {
-        <div>
-            <h4>@x.Title</h4>
-            <h6>@x.Author</h6>
-            <h6>@x.Category</h6>
-        </div>
-    }
+    <h3>The following is the list of books included in our bookstore database</h3>
+    <table class="table">
+        <thead>
+            <tr><th>BookId</th><th>Title</th><th>Author</th><th>Publisher</th><th>ISBN</th><th>Classification</th><th>Category</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+            <tr>
+                <td>@x.BookId</td>
+                <td>@x.Title</td>
+                <td>@x.Author</td>
+                <td>@x.Publisher</td>
+                <td>@x.ISBN</td>
+                <td>@x.Classification</td>
+                <td>@x.Category</td>
+                <td>$@x.Price</td>
+            </tr>
+            }
+        </tbody>
+     </table>
 </div>

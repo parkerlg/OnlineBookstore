@@ -31,6 +31,8 @@ namespace OnlineBookstore
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:BookstoreConnection"]);
             });
+
+            services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
